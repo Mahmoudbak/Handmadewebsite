@@ -1,0 +1,57 @@
+# ASP.NET Core specific
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+.vscode/
+.vs/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Compiled DLLs
+*.dll
+
+# Compiled executable files
+*.exe
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Package directories
+packages/
+
+.android/
+.bash_history
+.gitconfig
+.nuget/
+.vscode/
+.cache/
+.android/
+.bash_history
+.cache/
+.dotnet/
+.gitconfig
+.lesshst
+.viminfo
+AppData/
+Creative Cloud Files/
+Desktop/
+Documents/
+# Ignore system files and folders
+*.log
+.DS_Store
+Thumbs.db
+AppData/
+Cookies/
+Local Settings/
+My Documents/
+Desktop/
+Templates/

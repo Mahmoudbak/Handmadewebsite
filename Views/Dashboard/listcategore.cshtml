@@ -1,0 +1,84 @@
+﻿@model List<Handmade.Models.Category>
+
+@{
+    ViewData["Title"] = "Category Management";
+}
+
+<div class="container-fluid mt-5">
+    <h2 class="text-center text-light mb-4">Category Management</h2>
+
+    <!-- Add Category Button -->
+    <div class="text-right mb-3">
+        <a asp-controller="Categorie" asp-action="Addcategory" class="btn btn-dark text-white">
+            ➕ Add New Category
+        </a>
+    </div>
+
+    <!-- Category List Table -->
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <table class="table table-bordered table-dark table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model)
+                    {
+                        <tr>
+                            <td>@category.ID</td>
+                            <td>@category.Name</td>
+                            <td>@category.Description</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <a asp-action="Editca" asp-controller="Categorie" asp-route-id="@category.ID"
+                                       class="btn btn-sm btn-outline-warning me-2 d-flex align-items-center">
+                                        ✏️ Edit
+                                    </a>
+                                    <a asp-action="Delete" asp-controller="Categorie" asp-route-id="@category.ID"
+                                       class="btn btn-sm btn-outline-danger d-flex align-items-center"
+                                       style="color: red;">
+                                        🗑️ Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #343a40; /* لون خلفية غامق */
+    }
+
+    h2 {
+        color: #f8f9fa;
+    }
+
+    .btn-dark {
+        background-color: #495057;
+        border-color: #495057;
+    }
+
+    .btn-outline-warning {
+        color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-outline-danger {
+        color: red;
+        border-color: red;
+    }
+
+    .table {
+        width: 100%; /* لضمان ملء الشاشة */
+    }
+</style>
